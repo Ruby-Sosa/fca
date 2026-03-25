@@ -1,42 +1,48 @@
-<footer class="mt-5">
+<footer class="mt-4">
 
-    <div style="background-color:#0b2c55; color:white; padding:50px 0;">
+    <div style="background-color:#0b2c55; color:white; padding:30px 0;">
         <div class="container">
-            <div class="row g-4">
+            <div class="row g-3">
 
                 {{-- Columna 1 --}}
                 <div class="col-md-4">
-                    <h5 class="fw-bold border-bottom pb-2 mb-3">Enlaces de interés</h5>
+                    <h6 class="fw-bold border-bottom pb-1 mb-2">Enlaces de interés</h6>
 
-                   <ul class="list-unstyled small" style="line-height:1.7;">
-                        <li>Sistema de Atención a Usuarios (Tecnología de Información)</li>
-                        <li>Sistema de Atención a Usuarios (Servicios Generales)</li>
-                        <li>Servicios de Control Escolar</li>
-                        <li>UADY 100% Libre de Humo y Tabaco</li>
-                        <li>Aviso de Privacidad para los alumnos</li>
-                        <li>Aviso Integral de Privacidad - Cámaras de Vigilancia FCA</li>
-                        <li>Preguntas Frecuentes</li>
-                        <li>Contacto: comunicacion.fca@correo.uady.mx</li>
-                        <li>Protocolo de violencia de género</li>
-                        <li>Catálogo de solicitudes y tiempos de atención</li>
-                        <li>Transparencia</li>
-                        <li>Bibliotecas</li>
-                        <li>Mapa de sitio</li>
+                    <ul class="list-unstyled small row" style="line-height:1.5;">
+                        
+                        <div class="col-6">
+                            <li>-Sistema de Atención (TI)</li>
+                            <li>-Servicios Generales</li>
+                            <li>-Control Escolar</li>
+                            <li>-UADY Libre de Humo</li>
+                            <li>-Aviso de Privacidad</li>
+                            <li>-Preguntas Frecuentes</li>
+                        </div>
+
+                        <div class="col-6">
+                            <li>-Contacto FCA</li>
+                            <li>-Protocolo de género</li>
+                            <li>-Catálogo de solicitudes</li>
+                            <li>-Transparencia</li>
+                            <li>-Bibliotecas</li>
+                            <li>-Mapa de sitio</li>
+                        </div>
+
                     </ul>
                 </div>
 
                 {{-- Columna 2 --}}
                 <div class="col-md-4 text-center d-flex flex-column justify-content-center">
-                    <h4 class="fw-bold mb-3">Facultad de Contaduría y Administración</h4>
-                    <p class="mb-1">Universidad Autónoma de Yucatán</p>
-                    <p class="small mb-0">© Todos los Derechos Reservados UADY 2026</p>
+                    <h5 class="fw-bold mb-2">Facultad de Contaduría y Administración</h5>
+                    <p class="mb-1 small">Universidad Autónoma de Yucatán</p>
+                    <p class="small mb-0">© UADY 2026</p>
                 </div>
 
                 {{-- Columna 3 --}}
                 <div class="col-md-4 text-center">
-                    <h5 class="fw-bold border-bottom pb-2 mb-3">Síguenos</h5>
+                    <h6 class="fw-bold border-bottom pb-1 mb-2">Síguenos</h6>
 
-                    <div class="d-flex justify-content-center flex-wrap gap-3">
+                    <div class="d-flex justify-content-center gap-3 small">
                         <span>Facebook</span>
                         <span>Instagram</span>
                         <span>YouTube</span>
@@ -49,12 +55,10 @@
     </div>
 
     {{-- Aviso legal --}}
-    <div style="background-color:#f2f2f2; padding:20px 0;">
+    <div style="background-color:#f2f2f2; padding:12px 0;">
         <div class="container text-center">
-            <small style="line-height:1.6;">
-                Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile,
-                se cite la fuente completa y su dirección electrónica; de otra forma requiere permiso
-                previo por escrito de la institución.
+            <small style="font-size:12px; line-height:1.5;">
+                Esta página puede ser reproducida con fines no lucrativos, siempre que se cite la fuente completa.
             </small>
         </div>
     </div>

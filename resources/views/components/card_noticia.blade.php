@@ -1,40 +1,44 @@
 <div class="col-md-6 col-lg-3">
 
-    <div class="card h-100 border-0 shadow-sm"
-         style="background-color:#3d5876; color:white;">
+    <div class="card h-100 border-0 shadow-sm overflow-hidden"
+         style="border-radius:12px; background-color:#0b2c55; color:white; transition:0.3s;">
 
-        <div class="card-header border-0 fw-bold"
-             style="background-color:#3d5876; min-height:90px; font-size:14px;">
-            {{ $titulo }}
+        {{-- Imagen --}}
+        <div style="overflow:hidden;">
+            <img src="{{ asset('img/'.$imagen) }}"
+                 class="card-img-top"
+                 style="height:200px; object-fit:cover; transition:0.3s;"
+                 alt="{{ $titulo }}">
         </div>
 
-        <img src="{{ asset('img/'.$imagen) }}"
-             class="card-img-top"
-             style="height:220px; object-fit:cover;"
-             alt="{{ $titulo }}">
+        {{-- Contenido --}}
+        <div class="p-3">
 
-        <div class="card-body">
+            {{-- Título --}}
+            <h6 class="fw-bold mb-2" style="min-height:50px;">
+                {{ $titulo }}
+            </h6>
 
-            <p class="mb-2">
-                <strong>Fecha:</strong>
-                {{ $fecha }}
+            {{-- Fecha --}}
+            <p class="mb-2 small">
+                <strong>Fecha:</strong> {{ $fecha }}
             </p>
 
-            <p>
+            {{-- Descripción --}}
+            <p class="small text-light" style="opacity:0.9;">
                 {{ $descripcion }}
             </p>
 
         </div>
 
-        <div class="card-footer border-0 text-end"
-             style="background-color:#3d5876;">
-
+        {{-- Footer --}}
+        <div class="px-3 pb-3 text-end">
             <a href="{{ $enlace ?? '#' }}"
-               class="text-white fw-bold text-decoration-none">
-
+               class="text-white fw-bold text-decoration-none small">
                 Ver más...
-
             </a>
         </div>
+
     </div>
+
 </div>

@@ -6,68 +6,91 @@
 
 {{-- Banner principal --}}
 @if($banner)
-<div class="container-fluid p-0 mb-5">
-    <img src="{{ asset('img/'.$banner->imagen) }}" 
-         class="img-fluid w-100"
-         style="height:420px; object-fit:cover;"
-         alt="{{ $banner->titulo }}">
-</div>
+<section class="mb-5">
+    <div class="container-fluid px-0">
+        <div class="position-relative overflow-hidden shadow-sm">
+            <img src="{{ asset('img/'.$banner->imagen) }}" 
+                 class="img-fluid w-100"
+                 style="height:460px; object-fit:cover;"
+                 alt="{{ $banner->titulo }}">
+        </div>
+    </div>
+</section>
 @endif
 
 {{-- Bienvenida --}}
-<div class="container text-center my-5">
-    <h2>{{ $seccion->titulo }}</h2>
+<section class="py-4 py-md-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="bg-white shadow-sm rounded-4 p-4 p-md-5 text-center border">
+                    <span class="text-uppercase fw-semibold" style="color:#c69214; letter-spacing:1px; font-size:.9rem;">
+                        Bienvenidos a la
+                    </span>
 
-    <p class="lead">
-        {{ $seccion->contenido }}
-    </p>
-</div>
+                    <h2 class="fw-bold mt-2 mb-3" style="color:#0b2c55;">
+                        {{ $seccion->titulo }}
+                    </h2>
 
-{{-- Apartados / Noticias --}}
-<div class="container my-5">
-
-    <h3 class="mb-4">Noticias</h3>
-
-    <div class="row g-4">
-
-        @foreach($apartados as $apartado)
-
-            @include('components.card_noticia',[
-                'titulo'=>$apartado->titulo,
-                'imagen'=>$apartado->imagen,
-                'fecha'=>\Carbon\Carbon::parse($apartado->fecha)
-                        ->format('d \d\e F \d\e Y'),
-                'descripcion'=>$apartado->descripcion,
-                'enlace'=>$apartado->enlace
-            ])
-
-        @endforeach
+                    <p class="lead mb-0 text-secondary">
+                        {{ $seccion->contenido }}
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>
 
-{{-- Apartados /Agenda Digital Universitaria (Eventos)--}}
-<div class="container my-5">
+{{-- Noticias --}}
+<section class="py-4">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+            <div>
+                <span class="text-uppercase fw-semibold" style="color:#c69214; letter-spacing:1px; font-size:.85rem;">
+                    Actualidad
+                </span>
+                <h3 class="fw-bold mb-0" style="color:#0b2c55;">Noticias</h3>
+            </div>
+        </div>
 
-    <h3 class="mb-4">
-        Agenda Digital Universitaria (Eventos)
-    </h3>
-
-    <div class="row g-4">
-
-        @foreach($eventos as $evento)
-
-            @include('components.card_evento',[
-                'titulo'=>$evento->titulo,
-                'imagen'=>$evento->imagen,
-                'fecha'=>\Carbon\Carbon::parse($evento->fecha)
-                        ->format('d \d\e F \d\e Y'),
-                'hora'=>$evento->hora,
-                'enlace'=>$evento->enlace
-            ])
-
-        @endforeach
-
+        <div class="row g-4">
+            @foreach($apartados as $apartado)
+                @include('components.card_noticia',[
+                    'titulo'=>$apartado->titulo,
+                    'imagen'=>$apartado->imagen,
+                    'fecha'=>\Carbon\Carbon::parse($apartado->fecha)->format('d \d\e F \d\e Y'),
+                    'descripcion'=>$apartado->descripcion,
+                    'enlace'=>$apartado->enlace
+                ])
+            @endforeach
+        </div>
     </div>
+</section>
 
-</div>
+{{-- Agenda Digital --}}
+<section class="py-4 pb-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+            <div>
+                <span class="text-uppercase fw-semibold" style="color:#c69214; letter-spacing:1px; font-size:.85rem;">
+                    Participa
+                </span>
+                <h3 class="fw-bold mb-0" style="color:#0b2c55;">Agenda Digital Universitaria</h3>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            @foreach($eventos as $evento)
+                @include('components.card_evento',[
+                    'titulo'=>$evento->titulo,
+                    'imagen'=>$evento->imagen,
+                    'fecha'=>\Carbon\Carbon::parse($evento->fecha)->format('d \d\e F \d\e Y'),
+                    'hora'=>$evento->hora,
+                    'enlace'=>$evento->enlace
+                ])
+            @endforeach
+        </div>
+    </div>
+</section>
+
 @endsection
