@@ -7,61 +7,9 @@
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!-- ESTILOS -->
-    <style>
-        body{
-            background-color:#f4f6f9;
-            font-family: Arial, sans-serif;
-            color:#1f2937;
-        }
-
-        /* HEADER */
-        .site-header{
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            border-bottom: 1px solid #dbe3ea;
-            box-shadow: 0 2px 10px rgba(0,0,0,.05);
-        }
-
-        .logo-box img{
-            max-height: 95px;
-            object-fit: contain;
-        }
-
-        .brand-block{
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            height:100%;
-        }
-
-        .brand-title{
-            font-size: 1.9rem;
-            font-weight: 700;
-            color:#0b2c55;
-            margin-bottom: .2rem;
-        }
-
-        .brand-subtitle{
-            font-size: .95rem;
-            color:#6b7280;
-            margin:0;
-        }
-
-        .page-content{
-            min-height: 60vh;
-        }
-
-        @media (max-width: 991px){
-            .brand-title{
-                font-size:1.35rem;
-            }
-
-            .brand-subtitle{
-                font-size:.85rem;
-            }
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -95,13 +43,19 @@
     {{-- NAVBAR --}}
     @include('components.navbar')
 
-    {{-- CONTENIDO --}}
-    <main class="container my-5 page-content">
-        @yield('content')
-    </main>
+    {{-- SUBMENÚ --}}
+    @include('components.subnavbar')
 
+    {{-- CONTENIDO --}}
+    <main class="page-content">
+    <div class="container my-5">
+        @yield('content')
+    </div>
+</main>
     {{-- FOOTER --}}
     @include('components.footer')
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
