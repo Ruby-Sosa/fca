@@ -24,7 +24,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Llave foránea
-            $table->foreign('subnav_menu_id')
+           $table->foreign('subnav_menu_id')
                   ->references('id')
                   ->on('subnav_menus')
                   ->onDelete('cascade');
