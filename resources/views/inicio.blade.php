@@ -10,7 +10,7 @@
     <div class="container-fluid px-0">
         <div class="position-relative overflow-hidden shadow-sm">
             <img src="{{ asset('img/'.$banner->imagen) }}" 
-                 class="img-fluid w-100"
+                 class="w-100"
                  style="height:460px; object-fit:cover;"
                  alt="{{ $banner->titulo }}">
         </div>
@@ -24,18 +24,19 @@
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <div class="bg-white shadow-sm rounded-4 p-4 p-md-5 text-center border">
-                    <span class="text-uppercase fw-semibold" style="color:#c69214; letter-spacing:1px; font-size:.9rem;">
-                        Bienvenidos a la
-                    </span>
-
-                    <h2 class="fw-bold mt-2 mb-3" style="color:#0b2c55;">
-                        {{ $seccion->titulo }}
-                    </h2>
-
-                    <p class="lead mb-0 text-secondary">
-                        {{ $seccion->contenido }}
-                    </p>
-                </div>
+    <span class="text-uppercase fw-semibold subtitulo-fca">
+        Bienvenidos 
+    </span>
+    <h2 class="fw-bold mt-2 mb-3 titulo-fca">
+    {{ $seccion->titulo }}
+    </h2>
+    {{-- 🔥 DESCRIPCIÓN --}}
+    <p class="descripcion-fca">
+        Fundada en 1962 como la Escuela de Comercio y Administración, la Facultad de Contaduría y Administración (FCA) es actualmente el plantel con mayor matrícula de estudiantes en la Universidad Autónoma de Yucatán. 
+        Ubicada en el Campus de Ciencias Sociales, Económico-Administrativas y Humanidades, la institución ofrece cuatro licenciaturas: Contador Público (con presencia en Mérida y Tizimín), Administración, Mercadotecnia y Negocios Internacionales, y Administración de Tecnologías de Información. 
+        Asimismo, su Unidad de Posgrado e Investigación imparte maestrías especializadas en Finanzas, Impuestos, Mercadotecnia Digital y Dirección Estratégica.
+    </p>
+</div>
             </div>
         </div>
     </div>

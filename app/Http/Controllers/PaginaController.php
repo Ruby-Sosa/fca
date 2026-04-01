@@ -7,6 +7,7 @@ use App\Models\Seccion;
 use App\Models\Banner;
 use App\Models\ApartadoInicio;
 use App\Models\AgendaDigital;
+use App\Models\ApartadoAspirante;
 
 class PaginaController extends Controller
 {
@@ -22,8 +23,9 @@ class PaginaController extends Controller
 
     public function aspirantes()
     {
-        $seccion = Seccion::where('pagina', 'aspirantes')->first();
-        return view('aspirantes', compact('seccion'));
+    $seccion = Seccion::where('pagina', 'aspirantes')->first();
+    $apartados = ApartadoAspirante::orderBy('orden')->get();
+    return view('aspirantes', compact('seccion', 'apartados'));
     }
 
     public function estudiantes()
@@ -44,3 +46,4 @@ class PaginaController extends Controller
         return view('egresados', compact('seccion'));
     }
 }
+
