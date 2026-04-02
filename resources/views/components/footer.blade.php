@@ -1,12 +1,8 @@
 <footer class="mt-4">
-
     <div style="background-color:#0b2c55; color:white; padding:30px 0;">
-        
         <!-- 🔥 CAMBIO IMPORTANTE -->
         <div class="container-fluid px-5">
-            
             <div class="row g-3 align-items-start">
-
                 {{-- Columna 1 --}}
                 <div class="col-md-4 text-start">
                     <h6 class="fw-bold border-bottom pb-1 mb-2">Enlaces de interés</h6>
@@ -70,3 +66,5 @@
     </div>
 
 </footer>
+
+

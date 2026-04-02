@@ -1,5 +1,5 @@
-<div class="sub-nav">
-    <div class="container d-flex justify-content-center justify-content-lg-between align-items-center flex-wrap text-center">
+<div class="sub-nav d-flex justify-content-center align-items-center">
+    <div class="d-flex flex-wrap justify-content-center align-items-center">
         @foreach($menus as $menu)
             <div class="dropdown menu-hover">
                 <a href="#" class="dropdown-toggle">
