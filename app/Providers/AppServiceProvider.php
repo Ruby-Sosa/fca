@@ -3,9 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 use App\Models\MenuNav;
 use App\Models\SubnavMenu;
-use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,20 +22,21 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //Navbar principal
-    $menuItems = MenuNav::where('estatus', 1)
-        ->orderBy('orden', 'asc')
-        ->get();
+        View::composer('components.navbar', function ($view) {
+            $menuItems = MenuNav::where('estatus', 1)
+                ->orderBy('orden', 'asc')
+                ->get();
 
-    View::share('menuItems', $menuItems);
+            $view->with('menuItems', $menuItems);
+        });
 
-    View::composer('components.subnavbar', function ($view) {
+        View::composer('components.subnavbar', function ($view) {
             $menus = SubnavMenu::with('items')
                 ->where('estatus', 1)
-                ->orderBy('orden')
+                ->orderBy('orden', 'asc')
                 ->get();
 
             $view->with('menus', $menus);
-            });
+        });
     }
 }

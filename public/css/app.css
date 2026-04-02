@@ -2,23 +2,29 @@ body{
     background-color:#f4f6f9;
     font-family: Arial, sans-serif;
     color:#1f2937;
-    overflow-x: hidden;
+    overflow-x:hidden;
+    padding-top:160px;
 }
 
 img{
-    max-width: 100%;
-    height: auto;
+    max-width:100%;
+    height:auto;
 }
 
 .site-header{
     background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    border-bottom: 1px solid #dbe3ea;
-    box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    border-bottom:1px solid #dbe3ea;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:9999;
 }
 
 .logo-box img{
-    max-height: 95px;
-    object-fit: contain;
+    max-height:95px;
+    object-fit:contain;
 }
 
 .brand-block{
@@ -29,215 +35,147 @@ img{
 }
 
 .brand-title{
-    font-size: 1.9rem;
-    font-weight: 700;
+    font-size:1.9rem;
+    font-weight:700;
     color:#0b2c55;
-    margin-bottom: .2rem;
-    line-height: 1.2;
+    margin-bottom:.2rem;
+    line-height:1.2;
 }
 
 .brand-subtitle{
-    font-size: .95rem;
+    font-size:.95rem;
     color:#6b7280;
     margin:0;
 }
 
 .main-nav{
     background: linear-gradient(90deg, #c69214 0%, #d7a62e 100%);
-    box-shadow: inset 0 -1px 0 rgba(0,0,0,.08);
-
-    height: 50px; /* 🔥 altura fija */
-    display: flex;
-    align-items: center; /* 🔥 centra vertical */
-
-    overflow-x: auto;
-    overflow-y: hidden;
+    min-height:46px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .main-nav-scroll{
-    min-width: max-content;
-    padding: 0 10px; /* 🔥 quita altura extra */
-    display: flex;
-    align-items: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
 }
 
 .main-nav a{
     color:#17202a;
     font-weight:600;
     text-decoration:none;
-
-    height: 100%; /* 🔥 clave */
-    display: flex;
-    align-items: center; /* 🔥 centra texto */
-
-    padding:0 12px; /* 🔥 sin padding vertical */
+    padding:12px 8px;
     font-size:13px;
-    white-space: nowrap;
-    flex: 0 0 auto;
+    white-space:nowrap;
 }
 
 .main-nav a:hover{
-    background-color: rgba(255,255,255,.28);
     color:#0b2c55;
 }
 
 .sub-nav{
     background:#0b2c55;
-    box-shadow: 0 4px 14px rgba(11,44,85,.18);
-
-    height: 50px; /* 🔥 MISMA altura */
+    min-height:48px;
     display:flex;
+    justify-content:center;
     align-items:center;
-
-    overflow-x: auto;
-    overflow-y: visible;
+    position:relative;
+    z-index:10000;
 }
 
 .sub-nav-scroll{
-    min-width: max-content;
-    padding: 0 10px; /* 🔥 igual que arriba */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+}
+
+.menu-item{
+    position:relative;
+}
+
+.menu-link{
     display:flex;
     align-items:center;
+    color:#ffffff;
+    text-decoration:none;
+    padding:14px 12px;
+    font-size:13px;
+    white-space:nowrap;
 }
 
-.menu-hover{
-    position: relative;
-    flex: 0 0 auto;
+.menu-link:hover{
+    color:#f0c75e;
 }
 
-.menu-hover:hover .dropdown-menu{
+.menu-link::after{
+    content:" ▼";
+    font-size:9px;
+    margin-left:4px;
+}
+
+.menu-dropdown{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    min-width:230px;
+    background:#efc966;
+    margin:0;
+    padding:8px 0;
+    list-style:none;
+    border-radius:0 0 8px 8px;
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+    z-index:10001;
+}
+
+.menu-item:hover .menu-dropdown{
     display:block;
 }
 
-.sub-nav .dropdown > a{
-    height:100%;
-    display:flex;
-    align-items:center;
-    padding:0 12px;
-    font-size:13px;
-}
-
-.sub-nav .dropdown > a:hover{
-    color:#f6c453;
-}
-
-.dropdown-menu{
-    margin-top:0;
-    border:none;
-    border-radius:14px;
-    box-shadow:0 10px 24px rgba(0,0,0,.12);
-    padding:10px 0;
-    min-width: 220px;
-}
-
-.dropdown-item{
-    font-size:.92rem;
-    padding:10px 16px;
-    white-space: normal;
-}
-
-.dropdown-item:hover{
-    background:#f3f6fb;
+.menu-dropdown-item{
+    display:block;
+    text-decoration:none;
     color:#0b2c55;
-}
-
-.page-content{
-    min-height:60vh;
-    padding-top:20px;
-}
-
-.subtitulo-fca{
-    color:#c69214;
-    letter-spacing:1px;
-    font-size:.9rem;
-}
-
-.titulo-fca{
-    color:#0b2c55;
-    font-size:2.2rem;
-}
-
-.descripcion-fca{
-    color:#4b5563;
-    font-size:1.05rem;
-    line-height:1.7;
-    margin-top:15px;
-    text-align: justify;
-    max-width: 850px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.footer-top{
-    background-color:#0b2c55;
-    color:white;
-    padding:30px 0;
-}
-
-.footer-title{
-    font-weight:700;
-    border-bottom:1px solid rgba(255,255,255,.45);
-    padding-bottom:.5rem;
-    margin-bottom:1rem;
-}
-
-.footer-brand{
-    font-size:1.7rem;
-    font-weight:700;
-}
-
-.footer-links p{
-    margin-bottom:.55rem;
-    font-size:.92rem;
+    padding:10px 18px;
+    font-size:15px;
     line-height:1.4;
 }
 
-.footer-bottom{
-    background-color:#f2f2f2;
-    padding:12px 0;
+.menu-dropdown-item:hover{
+    background:rgba(255,255,255,.20);
+    color:#08284d;
 }
 
-.footer-bottom small{
-    font-size:12px;
-    line-height:1.5;
+.page-content,
+main,
+section{
+    position:relative;
+    z-index:1;
 }
 
-.footer-iconos a,
-.footer-iconos a i,
-.footer-iconos i.bi{
-    color:#ffffff !important;
-    font-size:28px !important;
-    line-height:1 !important;
+/* IMPORTANTE: borrar cualquier regla vieja como estas:
+.dropdown
+.dropdown-menu
+.dropdown-item
+.dropdown-toggle
+.menu-hover
+y también borrar:
+header, .site-header, .sub-nav, .dropdown-menu {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
-
-.footer-iconos a{
-    text-decoration:none !important;
-    display:inline-flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-}
-
-.footer-iconos a:hover,
-.footer-iconos a:hover i,
-.footer-iconos i.bi:hover{
-    color:#f6c453 !important;
-}
-
-.card-img-top{
-    width:100%;
-    object-fit:cover;
-}
-
-.card h6,
-.card .card-title{
-    word-break: break-word;
-}
-
-.table-responsive{
-    overflow-x:auto;
-}
+*/
 
 @media (max-width: 991px){
+    body{
+        padding-top:150px;
+    }
+
     .brand-title{
         font-size:1.4rem;
         text-align:center;
@@ -251,130 +189,16 @@ img{
     .logo-box img{
         max-height:75px;
     }
-
-    .main-nav a{
-        font-size:12px;
-        padding:8px 10px;
-    }
-
-    .sub-nav .dropdown > a{
-        font-size:13px;
-        padding:12px 10px;
-    }
-
-    .titulo-fca{
-        font-size:1.8rem;
-    }
-
-    .descripcion-fca{
-        font-size:1rem;
-        text-align:left;
-    }
-
-    .footer-brand{
-        font-size:1.4rem;
-    }
-
-    .footer-links{
-        text-align:left;
-    }
 }
 
 @media (max-width: 767px){
-    .page-content{
-        padding-top:12px;
-    }
-
-    .brand-title{
-        font-size:1.2rem;
-    }
-
-    .brand-subtitle{
-        font-size:.8rem;
+    body{
+        padding-top:140px;
     }
 
     .main-nav-scroll,
     .sub-nav-scroll{
-        padding-left:8px;
-        padding-right:8px;
-    }
-
-    .main-nav a{
-        padding:7px 9px;
-        font-size:11.5px;
-    }
-
-    .sub-nav .dropdown > a{
-        padding:10px 8px;
-        font-size:12px;
-    }
-
-    .titulo-fca{
-        font-size:1.5rem;
-    }
-
-    .descripcion-fca{
-        font-size:.95rem;
-        line-height:1.6;
-    }
-
-    .footer-top{
-        padding:24px 0;
-    }
-
-    .footer-brand{
-        font-size:1.2rem;
-    }
-
-    .footer-iconos a,
-    .footer-iconos a i,
-    .footer-iconos i.bi{
-        font-size:22px !important;
-    }
-
-    .dropdown-menu{
-        min-width: 190px;
-    }
-}
-
-@media (max-width: 576px){
-    .logo-box img{
-        max-height:65px;
-    }
-
-    .brand-title{
-        font-size:1.05rem;
-    }
-
-    .brand-subtitle{
-        font-size:.75rem;
-    }
-
-    .main-nav a{
-        font-size:11px;
-        padding:6px 8px;
-    }
-
-    .sub-nav .dropdown > a{
-        font-size:11px;
-        padding:9px 7px;
-    }
-
-    .titulo-fca{
-        font-size:1.3rem;
-    }
-
-    .descripcion-fca{
-        font-size:.92rem;
-    }
-
-    .footer-links p{
-        font-size:.85rem;
-    }
-
-    .footer-iconos a,
-    .footer-iconos a i,
-    .footer-iconos i.bi{
-        font-size:20px !important;
+        overflow-x:auto;
+        max-width:100%;
     }
 }

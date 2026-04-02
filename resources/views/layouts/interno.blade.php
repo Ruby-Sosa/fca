@@ -13,10 +13,6 @@
 
     <x-header />
 
-    @include('components.navbar')
-
-    @include('components.subnavbar')
-
     <main class="page-content">
         <div class="container my-4 my-md-5">
             @yield('content')

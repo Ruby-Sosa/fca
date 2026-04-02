@@ -1,20 +1,22 @@
-<div class="sub-nav d-flex justify-content-center align-items-center">
-    <div class="d-flex flex-wrap justify-content-center align-items-center">
+<div class="sub-nav">
+    <div class="sub-nav-scroll">
         @foreach($menus as $menu)
-            <div class="dropdown menu-hover">
-                <a href="#" class="dropdown-toggle">
+            <div class="menu-item">
+                <a href="#" class="menu-link">
                     {{ $menu->nombre }}
                 </a>
 
-                <ul class="dropdown-menu">
-                    @foreach($menu->items as $item)
-                        <li>
-                            <a class="dropdown-item" href="{{ $item->href }}">
-                                {{ $item->nombre }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
+                @if($menu->items && $menu->items->count())
+                    <ul class="menu-dropdown">
+                        @foreach($menu->items as $item)
+                            <li>
+                                <a href="{{ $item->href }}" class="menu-dropdown-item">
+                                    {{ $item->nombre }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
             </div>
         @endforeach
     </div>
