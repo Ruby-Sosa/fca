@@ -1,19 +1,20 @@
 <header class="site-header">
-    <div class="container py-3">
-        <div class="row align-items-center">
-            <div class="col-md-2 col-12 text-center text-md-start mb-3 mb-md-0 logo-box">
-                <img src="{{ asset('img/logo.png') }}" alt="Logo FCA" class="img-fluid">
-            </div>
 
-            <div class="col-md-10 col-12">
-                <div class="brand-block text-center text-md-start">
-                    <div class="brand-title">Facultad de Contaduría y Administración</div>
-                    <p class="brand-subtitle">“Luz, Ciencia y Verdad”</p>
-                </div>
+    <!-- 🔵 LOGO FLOTANTE IZQUIERDA -->
+    <div class="logo-float-left">
+        <img src="{{ asset('img/logo.jpg') }}" alt="Logo FCA">
+    </div>
+
+    <div class="container py-1">
+        <div class="row align-items-center">
+            <div class="col-md-12 text-center text-md-start ps-5">
+                <div class="brand-title">Facultad de Contaduría y Administración</div>
+                <p class="brand-subtitle">“Luz, Ciencia y Verdad”</p>
             </div>
         </div>
     </div>
 
     @include('components.navbar')
     @include('components.subnavbar')
+
 </header>

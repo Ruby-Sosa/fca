@@ -1,9 +1,9 @@
 body{
     background-color:#f4f6f9;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color:#1f2937;
     overflow-x:hidden;
-    padding-top:160px;
+    padding-top:170px;
 }
 
 img{
@@ -23,8 +23,29 @@ img{
 }
 
 .logo-box img{
-    max-height:95px;
+    max-height:80px;
     object-fit:contain;
+}
+
+/* 🔵 LOGO IZQUIERDO FLOTANTE */
+.logo-float-left{
+    position:absolute;
+    left:20px;
+    top:20px;
+    z-index:10002;
+}
+
+.logo-float-left img{
+    width:85px;
+    height:85px;
+    border-radius:50%;
+    object-fit:contain;
+
+    background:white;
+    padding:6px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.25);
+    border:3px solid #ffffff;
 }
 
 .brand-block{
@@ -35,25 +56,24 @@ img{
 }
 
 .brand-title{
-    font-size:1.9rem;
+    font-size:1.5rem;
     font-weight:700;
     color:#0b2c55;
-    margin-bottom:.2rem;
+    margin-bottom:.1rem;
     line-height:1.2;
 }
 
 .brand-subtitle{
-    font-size:.95rem;
+    font-size:.9rem;
     color:#6b7280;
     margin:0;
 }
 
 .main-nav{
-    background: linear-gradient(90deg, #c69214 0%, #d7a62e 100%);
-    min-height:46px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    background: linear-gradient(90deg, #d69b11, #e0b84a);
+    border-radius: 10px;
+    margin: 3px auto;
+    width: 95%;
 }
 
 .main-nav-scroll{
@@ -73,7 +93,7 @@ img{
 }
 
 .main-nav a:hover{
-    color:#0b2c55;
+    color:#0e4486;
 }
 
 .sub-nav{
@@ -84,6 +104,9 @@ img{
     align-items:center;
     position:relative;
     z-index:10000;
+    border-radius: 10px;
+    margin: 3px auto;
+    width: 99%;
 }
 
 .sub-nav-scroll{
