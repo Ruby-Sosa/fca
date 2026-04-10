@@ -1,6 +1,6 @@
 body{
     background-color:#f4f6f9;
-    font-family: 'Poppins', sans-serif;
+    font-family:'Poppins', sans-serif;
     color:#1f2937;
     overflow-x:hidden;
     padding-top:170px;
@@ -12,7 +12,7 @@ img{
 }
 
 .site-header{
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    background:linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
     border-bottom:1px solid #dbe3ea;
     box-shadow:0 2px 10px rgba(0,0,0,.05);
     position:fixed;
@@ -27,7 +27,7 @@ img{
     object-fit:contain;
 }
 
-/* 🔵 LOGO IZQUIERDO FLOTANTE */
+/* LOGO IZQUIERDO FLOTANTE */
 .logo-float-left{
     position:absolute;
     left:20px;
@@ -40,10 +40,8 @@ img{
     height:85px;
     border-radius:50%;
     object-fit:contain;
-
     background:white;
     padding:6px;
-
     box-shadow:0 6px 18px rgba(0,0,0,.25);
     border:3px solid #ffffff;
 }
@@ -70,10 +68,10 @@ img{
 }
 
 .main-nav{
-    background: linear-gradient(90deg, #d69b11, #e0b84a);
-    border-radius: 10px;
-    margin: 3px auto;
-    width: 95%;
+    background:linear-gradient(90deg, #d69b11, #e0b84a);
+    border-radius:10px;
+    margin:3px auto;
+    width:95%;
 }
 
 .main-nav-scroll{
@@ -104,9 +102,9 @@ img{
     align-items:center;
     position:relative;
     z-index:10000;
-    border-radius: 10px;
-    margin: 3px auto;
-    width: 99%;
+    border-radius:10px;
+    margin:3px auto;
+    width:99%;
 }
 
 .sub-nav-scroll{
@@ -180,20 +178,233 @@ section{
     z-index:1;
 }
 
-/* IMPORTANTE: borrar cualquier regla vieja como estas:
-.dropdown
-.dropdown-menu
-.dropdown-item
-.dropdown-toggle
-.menu-hover
-y también borrar:
-header, .site-header, .sub-nav, .dropdown-menu {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+/* =========================
+   TITULOS DE SECCION
+========================= */
+.section-title{
+    font-size:2rem;
+    font-weight:700;
+    color:#0b2c55;
+    margin-bottom:.3rem;
 }
-*/
 
+.section-subtitle{
+    color:#6b7280;
+    font-size:.95rem;
+    margin-bottom:1.8rem;
+}
+
+/* =========================
+   TARJETAS DE NOTICIAS
+========================= */
+.noticia-card{
+    border-radius:18px;
+    transition:all .3s ease;
+    background:#ffffff;
+    overflow:hidden;
+}
+
+.noticia-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 16px 30px rgba(0,0,0,.12);
+}
+
+.noticia-img{
+    height:220px;
+    width:100%;
+    object-fit:cover;
+    transition:transform .35s ease;
+}
+
+.noticia-card:hover .noticia-img{
+    transform:scale(1.05);
+}
+
+.noticia-body{
+    padding:1rem;
+}
+
+.noticia-fecha{
+    color:#6b7280;
+    font-size:.85rem;
+    margin-bottom:.5rem;
+}
+
+.noticia-titulo{
+    font-size:1.05rem;
+    font-weight:700;
+    color:#0b2c55;
+    margin-bottom:.6rem;
+    line-height:1.4;
+    min-height:48px;
+}
+
+.noticia-descripcion{
+    color:#4b5563;
+    font-size:.92rem;
+    line-height:1.6;
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    min-height:66px;
+}
+
+.noticia-link{
+    display:inline-block;
+    margin-top:1rem;
+    color:#0b2c55;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.noticia-link:hover{
+    color:#d69b11;
+}
+
+/* =========================
+   AGENDA DIFERENTE
+========================= */
+.agenda-section{
+    background:#eef3f8;
+    border-radius:24px;
+    padding:32px 22px;
+}
+
+.agenda-card{
+    border-radius:20px;
+    transition:all .3s ease;
+    background:#ffffff;
+    overflow:hidden;
+}
+
+.agenda-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 30px rgba(0,0,0,.12);
+}
+
+.agenda-img-wrap{
+    height:100%;
+    overflow:hidden;
+    background:#dbe3ea;
+}
+
+.agenda-img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+    transition:transform .35s ease;
+}
+
+.agenda-card:hover .agenda-img{
+    transform:scale(1.05);
+}
+
+.agenda-content{
+    padding:1.2rem 1.3rem;
+    display:flex;
+    flex-direction:column;
+    gap:.8rem;
+    height:100%;
+}
+
+.agenda-top{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.agenda-fecha-box{
+    min-width:84px;
+    background:linear-gradient(180deg, #0b2c55 0%, #123d72 100%);
+    color:#ffffff;
+    border-radius:18px;
+    padding:14px 10px;
+    text-align:center;
+    box-shadow:0 8px 18px rgba(11,44,85,.18);
+}
+
+.agenda-dia{
+    font-size:1.7rem;
+    font-weight:700;
+    line-height:1;
+}
+
+.agenda-mes{
+    font-size:.82rem;
+    text-transform:uppercase;
+    letter-spacing:.8px;
+    margin-top:4px;
+}
+
+.agenda-info{
+    flex:1;
+}
+
+.agenda-badge{
+    display:inline-block;
+    background:#e8f1ff;
+    color:#0b2c55;
+    font-size:.75rem;
+    font-weight:600;
+    padding:6px 12px;
+    border-radius:999px;
+    margin-bottom:.55rem;
+}
+
+.agenda-titulo{
+    font-size:1.1rem;
+    font-weight:700;
+    color:#0b2c55;
+    margin-bottom:.4rem;
+    line-height:1.4;
+}
+
+.agenda-meta{
+    color:#4b5563;
+    font-size:.92rem;
+    margin-bottom:.3rem;
+}
+
+.agenda-meta strong{
+    color:#1f2937;
+}
+
+.agenda-footer{
+    margin-top:auto;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.agenda-btn{
+    display:inline-block;
+    background:#0b2c55;
+    color:#ffffff;
+    text-decoration:none;
+    font-size:.9rem;
+    font-weight:600;
+    padding:10px 18px;
+    border-radius:999px;
+    transition:all .3s ease;
+}
+
+.agenda-btn:hover{
+    background:#d69b11;
+    color:#0b2c55;
+}
+
+/* =========================
+   FOOTER GENERAL TARJETAS
+========================= */
+.card-clean{
+    border:none;
+    box-shadow:0 6px 16px rgba(0,0,0,.06);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 991px){
     body{
         padding-top:150px;
@@ -212,6 +423,18 @@ header, .site-header, .sub-nav, .dropdown-menu {
     .logo-box img{
         max-height:75px;
     }
+
+    .noticia-img{
+        height:200px;
+    }
+
+    .agenda-img{
+        height:200px;
+    }
+
+    .agenda-top{
+        align-items:flex-start;
+    }
 }
 
 @media (max-width: 767px){
@@ -223,5 +446,50 @@ header, .site-header, .sub-nav, .dropdown-menu {
     .sub-nav-scroll{
         overflow-x:auto;
         max-width:100%;
+    }
+
+    .section-title{
+        font-size:1.6rem;
+    }
+
+    .noticia-img{
+        height:190px;
+    }
+
+    .agenda-section{
+        padding:22px 14px;
+        border-radius:18px;
+    }
+
+    .agenda-img{
+        height:180px;
+    }
+
+    .agenda-top{
+        flex-direction:row;
+        align-items:center;
+        gap:12px;
+    }
+
+    .agenda-fecha-box{
+        min-width:72px;
+        padding:12px 8px;
+    }
+
+    .agenda-dia{
+        font-size:1.4rem;
+    }
+
+    .agenda-titulo{
+        font-size:1rem;
+    }
+
+    .agenda-footer{
+        justify-content:stretch;
+    }
+
+    .agenda-btn{
+        width:100%;
+        text-align:center;
     }
 }
