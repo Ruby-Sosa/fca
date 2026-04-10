@@ -1,42 +1,34 @@
-<div class="col-md-6 col-lg-3">
+<div class="col-12">
 
-    <div class="card h-100 border-0 shadow-sm overflow-hidden"
-         style="border-radius:12px; background-color:#0b2c55; color:white; transition:0.3s;">
+    <div class="noticia-item d-flex gap-3 align-items-start">
+
+        {{-- Línea decorativa --}}
+        <div class="noticia-linea"></div>
 
         {{-- Imagen --}}
-        <div style="overflow:hidden;">
-            <img src="{{ asset('img/'.$imagen) }}"
-                 class="card-img-top"
-                 style="height:200px; object-fit:cover; transition:0.3s;"
-                 alt="{{ $titulo }}">
+        <div class="noticia-img">
+            <img src="{{ asset('img/'.$imagen) }}" alt="{{ $titulo }}">
         </div>
 
         {{-- Contenido --}}
-        <div class="p-3">
+        <div class="flex-grow-1">
 
-            {{-- Título --}}
-            <h6 class="fw-bold mb-2" style="min-height:50px;">
-                {{ $titulo }}
-            </h6>
-
-            {{-- Fecha --}}
-            <p class="mb-2 small">
-                <strong>Fecha:</strong> {{ $fecha }}
+            <p class="noticia-fecha mb-1">
+                {{ $fecha }}
             </p>
 
-            {{-- Descripción --}}
-            <p class="small text-light" style="opacity:0.9;">
+            <h5 class="noticia-titulo mb-2">
+                {{ $titulo }}
+            </h5>
+
+            <p class="noticia-desc mb-2">
                 {{ $descripcion }}
             </p>
 
-        </div>
-
-        {{-- Footer --}}
-        <div class="px-3 pb-3 text-end">
-            <a href="{{ $enlace ?? '#' }}"
-               class="text-white fw-bold text-decoration-none small">
-                Ver más...
+            <a href="{{ $enlace ?? '#' }}" class="noticia-link">
+                Leer más →
             </a>
+
         </div>
 
     </div>

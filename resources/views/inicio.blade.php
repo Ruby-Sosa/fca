@@ -55,15 +55,22 @@
         </div>
 
         <div class="row g-4">
-            @foreach($apartados as $apartado)
-                @include('components.card_noticia',[
-                    'titulo'=>$apartado->titulo,
-                    'imagen'=>$apartado->imagen,
-                    'fecha'=>\Carbon\Carbon::parse($apartado->fecha)->format('d \d\e F \d\e Y'),
-                    'descripcion'=>$apartado->descripcion,
-                    'enlace'=>$apartado->enlace
-                ])
-            @endforeach
+            <div class="noticias-grid">
+                @foreach($apartados as $index => $apartado)
+                    <div class="noticia {{ $index == 0 ? 'grande' : '' }}">
+                        <img src="{{ asset('img/'.$apartado->imagen) }}" alt="">
+                        <div class="contenido">
+                            <p class="fecha">
+                                {{ \Carbon\Carbon::parse($apartado->fecha)->format('d \d\e F \d\e Y') }}
+                            </p>
+                            <h5>{{ $apartado->titulo }}</h5>
+                            <a href="{{ $apartado->enlace ?? '#' }}">
+                                Leer más →
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
 </section>
