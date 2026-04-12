@@ -23,12 +23,21 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('components.navbar', function ($view) {
-            $menuItems = MenuNav::where('estatus', 1)
-                ->orderBy('orden', 'asc')
-                ->get();
 
-            $view->with('menuItems', $menuItems);
-        });
+    $menuItems = MenuNav::where('estatus', 1)
+        ->orderBy('orden', 'asc')
+        ->get();
+
+    $menus = SubnavMenu::with('items')
+        ->where('estatus', 1)
+        ->orderBy('orden', 'asc')
+        ->get();
+
+    $view->with([
+        'menuItems' => $menuItems,
+        'menus' => $menus
+    ]);
+});
 
         View::composer('components.subnavbar', function ($view) {
             $menus = SubnavMenu::with('items')

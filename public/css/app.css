@@ -67,6 +67,26 @@ img{
     margin:0;
 }
 
+.navbar-toggler{
+    margin-left: auto;
+}
+
+.navbar-toggler-icon{
+    filter: invert(1);
+}
+
+.navbar-collapse{
+    max-width: 900px;
+    margin: auto;
+    max-height:80vh;
+    overflow-y:auto;
+}
+
+.main-nav .nav-link{
+    padding:10px;
+    font-size:14px;
+}
+
 .main-nav{
     background:linear-gradient(90deg, #d69b11, #e0b84a);
     border-radius:10px;
@@ -198,19 +218,20 @@ section{
    TARJETAS DE NOTICIAS
 ========================= */
 .noticia-item{
+    display:flex;
+    gap:15px;
+    align-items:flex-start;
     position:relative;
     padding:18px 15px;
     border-bottom:1px solid #b9b5b5;
     transition:0.3s;
 }
 
-/* 🔥 EFECTO HOVER PRO */
 .noticia-item:hover{
     background:#f9fafb;
     transform:translateX(6px);
 }
 
-/* 🔵 Línea lateral */
 .noticia-linea{
     width:4px;
     background:#c69214;
@@ -218,7 +239,6 @@ section{
     margin-top:5px;
 }
 
-/* Imagen */
 .noticia-img{
     flex:0 0 220px;
 }
@@ -230,7 +250,6 @@ section{
     border-radius:12px;
 }
 
-/* Fecha */
 .noticia-fecha{
     font-size:0.8rem;
     color:#c69214;
@@ -238,19 +257,16 @@ section{
     letter-spacing:0.5px;
 }
 
-/* Título */
 .noticia-titulo{
     font-weight:700;
     color:#0b2c55;
 }
 
-/* Descripción */
 .noticia-desc{
     color:#555;
     font-size:0.95rem;
 }
 
-/* Link */
 .noticia-link{
     font-weight:600;
     color:#0b2c55;
@@ -267,7 +283,6 @@ section{
     gap:20px;
 }
 
-/* 🔥 Noticia base */
 .noticia{
     position:relative;
     height:250px;
@@ -283,7 +298,6 @@ section{
     transition:0.4s;
 }
 
-/* Overlay oscuro */
 .noticia::after{
     content:"";
     position:absolute;
@@ -291,7 +305,10 @@ section{
     background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
 }
 
-/* Contenido */
+.noticia-content{
+    flex:1;
+}
+
 .noticia .contenido{
     position:absolute;
     bottom:0;
@@ -305,18 +322,15 @@ section{
     font-size:1rem;
 }
 
-/* Fecha */
 .noticia .fecha{
     font-size:0.75rem;
     color:#ffb303;
 }
 
-/* Hover 🔥 */
 .noticia:hover img{
     transform:scale(1.05);
 }
 
-/* 🔥 NOTICIA GRANDE */
 .noticia.grande{
     grid-column: span 2;
     grid-row: span 2;
@@ -557,4 +571,100 @@ section{
         width:100%;
         text-align:center;
     }
+}
+/* OCULTAR SUBNAV EN CELULAR */
+@media (max-width: 991px){
+    .sub-nav{
+        display: none;
+    }
+    .mobile-subnav{
+        margin-top:10px;
+    }
+    .mobile-title{
+        width:100%;
+        background:#0b2c55;
+        color:rgb(255, 255, 255);
+        border:none;
+        padding:12px;
+        text-align:left;
+        font-weight:600;
+        border-radius:8px;
+        margin-bottom:5px;
+    }
+    .mobile-link{
+        display:block;
+        padding:10px 15px;
+        background:#234d8d;
+        color:#ffffff !important;
+        text-decoration:none;
+        border-bottom:1px solid #ce7706;
+    }
+     .mobile-link:hover{
+        background:#ca9210;
+        color:#382701 !important;
+    }
+
+}
+/* OCULTAR menú móvil en PC */
+@media (min-width: 992px){
+    .mobile-subnav{
+        display: none !important;
+    }
+}
+
+@media (max-width: 991px){
+
+    .navbar-collapse{
+        max-height: 70vh;      /* altura máxima */
+        overflow-y: auto;      /* scroll vertical */
+        background: #c9910f;   /* opcional (se ve mejor) */
+        border-radius: 10px;
+        margin-top: 8px;
+        padding: 10px;
+    }
+
+}
+
+@media (max-width: 767px){
+
+    .col-12{
+        padding-left:10px;
+        padding-right:10px;
+    }
+
+    .noticia-item{
+        flex-direction: column;
+        padding:14px;
+        border-radius:14px;
+        background:#ffffff;
+        box-shadow:0 6px 16px rgba(0,0,0,.10);
+        margin-bottom:15px; /* 🔥 espacio entre cards */
+    }
+
+    .noticia-img{
+        width:100%;
+        flex:none;
+        margin-bottom:10px; /* 🔥 separación */
+    }
+
+    .noticia-img img{
+        width:100%;
+        height:200px;
+        object-fit:cover;
+        border-radius:12px;
+    }
+
+    .noticia-content{
+        width:100%;
+    }
+
+    .noticia-titulo{
+        font-size:1.05rem;
+    }
+
+    .noticia-desc{
+        font-size:0.88rem;
+        line-height:1.4;
+    }
+
 }

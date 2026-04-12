@@ -1,6 +1,6 @@
 <div class="col-12">
 
-    <div class="noticia-item d-flex gap-3 align-items-start">
+    <div class="noticia-item">
 
         {{-- Línea decorativa --}}
         <div class="noticia-linea"></div>
@@ -11,7 +11,7 @@
         </div>
 
         {{-- Contenido --}}
-        <div class="flex-grow-1">
+        <div class="noticia-content">
 
             <p class="noticia-fecha mb-1">
                 {{ $fecha }}
