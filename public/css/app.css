@@ -667,4 +667,20 @@ section{
         line-height:1.4;
     }
 
+    .noticias-grid{
+        display:block; 
+    }
+
+    .noticia{
+        width:100%;
+        height:auto;
+        margin-bottom:15px;
+    }
+
+    .noticia.grande{
+        width:100%;
+        height:250px;
+        margin-bottom:20px;
+    }
+
 }
