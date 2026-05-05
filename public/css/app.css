@@ -25,6 +25,11 @@ img{
     padding-left: 80px;
 }
 
+.page-content .container,
+.page-content .container-fluid{
+    max-width: 1200px;
+    margin: 0 auto;
+}
 .logo-box img{
     max-height:80px;
     object-fit:contain;
@@ -199,6 +204,7 @@ main,
 section{
     position:relative;
     z-index:1;
+    padding: 20px;
 }
 
 /* =========================
@@ -686,18 +692,4 @@ section{
         margin-bottom:20px;
     }
 
-}
-
-/* 🖥️ DESKTOP: ocultar navbar */
-@media (min-width: 992px){
-    .navbar-mobile{
-        display: none !important;
-    }
-}
-
-/* 📱 MÓVIL: mostrar navbar */
-@media (max-width: 991px){
-    .navbar-mobile{
-        display: block !important;
-    }
 }
