@@ -1,4 +1,4 @@
-body{
+ body{
     background-color:#f4f6f9;
     font-family:'Poppins', sans-serif;
     color:#1f2937;
@@ -20,6 +20,9 @@ img{
     left:0;
     width:100%;
     z-index:9999;
+}
+.site-header .container-fluid{
+    padding-left: 80px;
 }
 
 .logo-box img{
@@ -683,4 +686,18 @@ section{
         margin-bottom:20px;
     }
 
+}
+
+/* 🖥️ DESKTOP: ocultar navbar */
+@media (min-width: 992px){
+    .navbar-mobile{
+        display: none !important;
+    }
+}
+
+/* 📱 MÓVIL: mostrar navbar */
+@media (max-width: 991px){
+    .navbar-mobile{
+        display: block !important;
+    }
 }
