@@ -693,3 +693,146 @@ section{
     }
 
 }
+
+
+.banner-slider{
+    position: relative;
+    width: 100%;
+    height: 460px;
+    overflow: hidden;
+}
+
+/* cada slide ocupa todo */
+.banner-slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    opacity: 0;
+    transition: 0.8s ease;
+}
+
+.banner-slide.active{
+    opacity: 1;
+}
+
+/* imagen principal */
+.banner-main{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.6s;
+}
+
+/* hover: imagen se mueve a la izquierda */
+.banner-slide:hover .banner-main{
+    transform: translateX(-10%);
+}
+
+/* panel derecho */
+.banner-content{
+    position: absolute;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* fondo opacado */
+.banner-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4);
+}
+
+/* texto encima */
+.banner-text{
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 30px;
+}
+
+/* botón */
+.btn-banner{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 14px;
+    background: #c69214;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+
+.banner-slider{
+    position: relative;
+    width: 100%;
+    height: 460px;
+    overflow: hidden;
+}
+
+/* botones */
+.banner-prev,
+.banner-next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    background: rgba(0,0,0,.5);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.banner-prev{
+    left: 15px;
+}
+
+.banner-next{
+    right: 15px;
+}
+
+.banner-prev:hover,
+.banner-next:hover{
+    background: rgba(0,0,0,.8);
+}
+
+/* slides encima bien ordenados */
+.banner-slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.8s ease;
+}
+
+.banner-slide.active{
+    opacity: 1;
+}
+
+.banner-content{
+    position: absolute;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 🔥 centra verticalmente */
+}
+
+.banner-text{
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 30px;
+    max-width: 90%;
+}

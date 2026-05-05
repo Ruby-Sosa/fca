@@ -14,14 +14,16 @@ use App\Models\EgresadoModulo;
 class PaginaController extends Controller
 {
     public function inicio()
-    {
-        $seccion = Seccion::where('pagina', 'inicio')->first();
-        $banner = Banner::first();
-        $apartados = ApartadoInicio::all();
-        $eventos = AgendaDigital::all();
+{
+    $seccion = Seccion::where('pagina', 'inicio')->first();
+    $banners = Banner::where('estatus', 1)
+        ->orderBy('orden')
+        ->get();
+    $apartados = ApartadoInicio::all();
+    $eventos = AgendaDigital::all();
 
-        return view('inicio', compact('seccion', 'banner', 'apartados', 'eventos'));
-    }
+    return view('inicio', compact('seccion', 'banners', 'apartados', 'eventos'));
+}
 
     public function aspirantes()
     {

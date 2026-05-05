@@ -4,19 +4,42 @@
 
 @section('content')
 
-{{-- Banner principal --}}
-@if($banner)
-<section class="mb-5">
-    <div class="container-fluid px-0">
-        <div class="position-relative overflow-hidden shadow-sm">
-            <img src="{{ asset('img/'.$banner->imagen) }}" 
-                 class="w-100"
-                 style="height:460px; object-fit:cover;"
-                 alt="{{ $banner->titulo }}">
+{{-- Banner interactivo --}}
+<section class="banner-slider">
+
+    @foreach($banners as $index => $banner)
+    <div class="banner-slide {{ $index == 0 ? 'active' : '' }}">
+
+        {{-- Imagen principal --}}
+        <img class="banner-main" 
+             src="{{ asset('img/'.$banner->imagen) }}" />
+
+        {{-- Panel de información --}}
+        <div class="banner-content">
+
+            {{-- fondo opaco del contenido --}}
+            <div class="banner-bg"
+                 style="background-image: url('{{ asset('img/'.$banner->imagen_fondo) }}')">
+            </div>
+
+            <div class="banner-text">
+                <h2>{{ $banner->titulo }}</h2>
+                <p>{{ $banner->descripcion }}</p>
+
+                <a href="{{ $banner->enlace }}" class="btn-banner">
+                    Ver más
+                </a>
+            </div>
+
         </div>
+
     </div>
+    @endforeach
+
+    <button class="banner-prev">‹</button>
+    <button class="banner-next">›</button>
+
 </section>
-@endif
 
 {{-- Bienvenida --}}
 <section class="py-4 py-md-5">
@@ -100,5 +123,69 @@
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const slides = document.querySelectorAll(".banner-slide");
+    const nextBtn = document.querySelector(".banner-next");
+    const prevBtn = document.querySelector(".banner-prev");
+
+    let index = 0;
+    let interval;
+
+    // Mostrar slide activo
+    function showSlide(i) {
+        slides.forEach(slide => slide.classList.remove("active"));
+        slides[i].classList.add("active");
+    }
+
+    // Siguiente slide
+    function nextSlide() {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+    }
+
+    //  Anterior slide
+    function prevSlide() {
+        index = (index - 1 + slides.length) % slides.length;
+        showSlide(index);
+    }
+
+    //  Auto cambio
+    function startAuto() {
+        interval = setInterval(nextSlide, 5000);
+    }
+
+    //  Reiniciar timer cuando el usuario interactúa
+    function resetAuto() {
+        clearInterval(interval);
+        startAuto();
+    }
+
+    //  Inicialización segura
+    if (slides.length > 0) {
+        showSlide(0);
+        startAuto();
+    }
+
+    //  Botón siguiente
+    if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+            nextSlide();
+            resetAuto();
+        });
+    }
+
+    //  Botón anterior
+    if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+            prevSlide();
+            resetAuto();
+        });
+    }
+
+});
+</script>
 
 @endsection
