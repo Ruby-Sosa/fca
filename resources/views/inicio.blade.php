@@ -130,7 +130,7 @@
         <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
             <div>
                 <span class="text-uppercase fw-semibold" style="color:#c69214; letter-spacing:1px; font-size:.85rem;">
-                    Avisos
+                    Información
                 </span>
                 <h3 class="fw-bold mb-0" style="color:#0b2c55;">Coordinaciones</h3>
             </div>
