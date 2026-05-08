@@ -21,3 +21,5 @@ Route::get('/historia', [FacultadController::class, 'mostrarSlug'])->defaults('s
 Route::get('/matricula', [FacultadController::class, 'mostrarSlug'])->defaults('slug', 'matricula');
 Route::get('/organizacion', [FacultadController::class, 'mostrarSlug'])->defaults('slug', 'organizacion');
 Route::get('/plan', [FacultadController::class, 'mostrarSlug'])->defaults('slug', 'plan');
+Route::get('/coordinaciones', [PaginaController::class, 'coordinaciones'])
+    ->name('coordinaciones');

@@ -124,6 +124,45 @@
     </div>
 </section>
 
+{{-- Coordinaciones --}}
+<section class="py-4">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+            <div>
+                <span class="text-uppercase fw-semibold" style="color:#c69214; letter-spacing:1px; font-size:.85rem;">
+                    Avisos
+                </span>
+                <h3 class="fw-bold mb-0" style="color:#0b2c55;">Coordinaciones</h3>
+            </div>
+
+        </div>
+
+        <div class="row g-4">
+            @foreach($coordinaciones as $coordinacion)
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 aviso-coordinacion">
+                        @if($coordinacion->imagen)
+                            <img src="{{ asset('img/'.$coordinacion->imagen) }}"
+                                 class="card-img-top aviso-img"
+                                 alt="{{ $coordinacion->titulo }}">
+                        @endif
+
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-fca">
+                                {{ $coordinacion->titulo }}
+                            </h5>
+
+                            <p class="text-muted mb-0">
+                                {{ Str::limit($coordinacion->descripcion, 110) }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 

@@ -21,8 +21,13 @@ class PaginaController extends Controller
         ->get();
     $apartados = ApartadoInicio::all();
     $eventos = AgendaDigital::all();
+    $coordinaciones = EstudianteModulo::where('activo', 1)
+    ->where('tipo', 'coordinacion')
+    ->orderBy('orden')
+    ->limit(6)
+    ->get();
 
-    return view('inicio', compact('seccion', 'banners', 'apartados', 'eventos'));
+    return view('inicio', compact('seccion', 'banners', 'apartados', 'eventos','coordinaciones'));
 }
 
     public function aspirantes()
@@ -33,7 +38,7 @@ class PaginaController extends Controller
     }
 
     public function estudiantes()
-    {
+{
     $seccion = Seccion::where('pagina', 'estudiantes')->first();
 
     $modulos = EstudianteModulo::with([
@@ -42,10 +47,28 @@ class PaginaController extends Controller
         'enlaces'
     ])
     ->where('activo', 1)
+    ->where('tipo', 'general')
     ->orderBy('orden')
     ->get();
 
     return view('estudiantes', compact('seccion', 'modulos'));
+}
+
+public function coordinaciones()
+{
+    $seccion = Seccion::where('pagina', 'estudiantes')->first();
+
+    $modulos = EstudianteModulo::with([
+        'contactos',
+        'subapartados.items',
+        'enlaces'
+    ])
+    ->where('activo', 1)
+    ->where('tipo', 'coordinacion')
+    ->orderBy('orden')
+    ->get();
+
+    return view('coordinaciones', compact('seccion', 'modulos'));
 }
 
     public function docentes()

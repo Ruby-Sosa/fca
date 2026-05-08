@@ -4,151 +4,188 @@
 
 @section('content')
 
-@if($seccion)
-    <section class="mb-5 text-center">
-        <h1 class="fw-bold" style="color:#0b2c55;">{{ $seccion->titulo }}</h1>
-        <p class="text-secondary">{{ $seccion->contenido }}</p>
-    </section>
-@endif
+<section class="docentes-page py-5">
+    <div class="container-lg">
 
-@foreach($modulos as $modulo)
-    <section class="mb-5">
-        <h2 class="text-center fw-bold mb-3" style="color:#0b2c55;">
-            {{ $modulo->titulo }}
-        </h2>
-
-        @if($modulo->imagen)
-            <div class="mb-4">
-                <img src="{{ asset('img/'.$modulo->imagen) }}"
-                     class="img-fluid w-100 rounded shadow-sm"
-                     style="max-height:500px; object-fit:cover;"
-                     alt="{{ $modulo->titulo }}">
+        @if($seccion)
+            <div class="text-center mb-5">
+                <h1 class="fw-bold text-fca display-5">{{ $seccion->titulo }}</h1>
+                <p class="text-muted fs-5 encabezado-texto">{{ $seccion->contenido }}</p>
             </div>
         @endif
 
-        @if($modulo->descripcion)
-            <div class="mb-4">
-                <p>{!! nl2br(e($modulo->descripcion)) !!}</p>
-            </div>
-        @endif
+        @foreach($modulos as $modulo)
+            <section class="mb-5">
 
-        @foreach($modulo->subapartados as $subapartado)
-            <div class="mb-4">
-                <h4 class="fw-semibold" style="color:#0b2c55;">{{ $subapartado->titulo }}</h4>
+                <div class="card border-0 shadow-lg rounded-4 overflow-hidden modulo-card mb-5">
 
-                @if($subapartado->contenido)
-                    <p>{!! nl2br(e($subapartado->contenido)) !!}</p>
-                @endif
+                    @if($modulo->imagen)
+                        <img src="{{ asset('img/'.$modulo->imagen) }}"
+                             class="modulo-img"
+                             alt="{{ $modulo->titulo }}">
+                    @endif
 
-                @if($subapartado->items->count())
-                    <ul class="mb-0">
-                        @foreach($subapartado->items as $item)
-                            <li class="mb-2">
-                                @if($item->url)
-                                    <a href="{{ $item->url }}" target="_blank">{{ $item->titulo }}</a>
-                                @else
-                                    {{ $item->titulo }}
-                                @endif
+                    <div class="card-body p-5 text-center">
+                        <h2 class="fw-bold text-fca mb-3">{{ $modulo->titulo }}</h2>
 
-                                @if($item->contenido)
-                                    <div>{{ $item->contenido }}</div>
-                                @endif
-                            </li>
-                        @endforeach
-                    </ul>
-                @endif
-            </div>
-        @endforeach
+                        @if($modulo->descripcion)
+                            <p class="text-muted modulo-texto">
+                                {!! nl2br(e($modulo->descripcion)) !!}
+                            </p>
+                        @endif
+                    </div>
 
-        @php
-            $grupos = $modulo->enlaces->groupBy('grupo');
-        @endphp
-
-        @foreach($grupos as $grupo => $enlaces)
-            <div class="mb-4 p-4 rounded text-center text-white" style="background-color:#0b2c55;">
-                @if($grupo)
-                    <h5 class="fw-bold mb-3">{{ $grupo }}</h5>
-                @endif
-
-                <div class="d-flex flex-wrap justify-content-center gap-3">
-                    @foreach($enlaces as $enlace)
-                        <a href="{{ $enlace->url }}" target="_blank" class="btn btn-light">
-                            {{ $enlace->titulo }}
-                        </a>
-                    @endforeach
                 </div>
-            </div>
-        @endforeach
 
-        @if($modulo->categoriasDirectorio->count())
-            <div class="mt-5">
-                @foreach($modulo->categoriasDirectorio as $categoria)
-                    <div class="mb-5">
-                        <h4 class="fw-bold" style="color:#0b2c55;">{{ $categoria->titulo }}</h4>
+                @foreach($modulo->subapartados as $subapartado)
+                    <div class="info-card rounded-4 shadow-sm p-4 mb-4">
+                        <h4 class="fw-bold text-fca mb-3">{{ $subapartado->titulo }}</h4>
 
-                        <div class="row">
-                            <div class="col-md-4 fw-semibold">Apellido paterno</div>
-                            <div class="col-md-4 fw-semibold">Apellido materno y nombres</div>
-                            <div class="col-md-4 fw-semibold">Correo</div>
+                        @if($subapartado->contenido)
+                            <p class="text-muted">
+                                {!! nl2br(e($subapartado->contenido)) !!}
+                            </p>
+                        @endif
+
+                        @if($subapartado->items->count())
+                            <div class="row g-3 mt-2">
+                                @foreach($subapartado->items as $item)
+                                    <div class="col-md-6">
+                                        <div class="item-card p-3 rounded-3 h-100">
+                                            @if($item->url)
+                                                <a href="{{ $item->url }}" target="_blank" class="fw-bold item-link">
+                                                    {{ $item->titulo }}
+                                                </a>
+                                            @else
+                                                <strong>{{ $item->titulo }}</strong>
+                                            @endif
+
+                                            @if($item->contenido)
+                                                <p class="mb-0 mt-2 text-muted small">{{ $item->contenido }}</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
+                @endforeach
+
+                @php
+                    $grupos = $modulo->enlaces->groupBy('grupo');
+                @endphp
+
+                @foreach($grupos as $grupo => $enlaces)
+                    <div class="enlaces-box rounded-4 p-4 text-center mb-4">
+                        @if($grupo)
+                            <h5 class="fw-bold mb-3">{{ $grupo }}</h5>
+                        @endif
+
+                        <div class="d-flex flex-wrap justify-content-center gap-3">
+                            @foreach($enlaces as $enlace)
+                                <a href="{{ $enlace->url }}" target="_blank" class="btn btn-fca-yellow rounded-pill px-4">
+                                    {{ $enlace->titulo }}
+                                </a>
+                            @endforeach
                         </div>
+                    </div>
+                @endforeach
 
-                        @foreach($categoria->docentes as $docente)
-                            <div class="row py-1 border-bottom">
-                                <div class="col-md-4">{{ $docente->apellido_paterno }}</div>
-                                <div class="col-md-4">
-                                    {{ $docente->apellido_materno }} {{ $docente->nombres }}
-                                </div>
-                                <div class="col-md-4">
-                                    @if($docente->correo)
-                                        <a href="mailto:{{ $docente->correo }}">{{ $docente->correo }}</a>
-                                    @endif
+                @if($modulo->categoriasDirectorio->count())
+                    <div class="directorio-card rounded-4 shadow-sm p-4 mt-5">
+                        <h3 class="fw-bold text-fca text-center mb-4">Directorio docente</h3>
+
+                        @foreach($modulo->categoriasDirectorio as $categoria)
+                            <div class="mb-5">
+                                <h4 class="fw-bold text-fca mb-3">{{ $categoria->titulo }}</h4>
+
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th>Apellido paterno</th>
+                                                <th>Apellido materno y nombres</th>
+                                                <th>Correo</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($categoria->docentes as $docente)
+                                                <tr>
+                                                    <td>{{ $docente->apellido_paterno }}</td>
+                                                    <td>{{ $docente->apellido_materno }} {{ $docente->nombres }}</td>
+                                                    <td>
+                                                        @if($docente->correo)
+                                                            <a href="mailto:{{ $docente->correo }}" class="item-link">
+                                                                {{ $docente->correo }}
+                                                            </a>
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         @endforeach
                     </div>
-                @endforeach
-            </div>
-        @endif
+                @endif
 
-        @if($modulo->contactos->count())
-            <div class="mt-4">
-                <h5 class="fw-bold" style="color:#0b2c55;">Contacto:</h5>
+                @if($modulo->contactos->count())
+                    <div class="mt-5">
+                        <h3 class="fw-bold text-fca text-center mb-4">Contacto</h3>
 
-                <div class="row g-4">
-                    @foreach($modulo->contactos as $contacto)
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-start gap-3">
-                                @if($contacto->foto)
-                                    <img src="{{ asset('img/'.$contacto->foto) }}"
-                                         alt="{{ $contacto->nombre }}"
-                                         width="90"
-                                         class="rounded shadow-sm">
-                                @endif
+                        <div class="row g-4 justify-content-center">
+                            @foreach($modulo->contactos as $contacto)
+                                <div class="col-md-6">
+                                    <div class="contacto-docente-card h-100 rounded-4 shadow-sm p-4">
 
-                                <div>
-                                    <p class="fw-bold mb-1">{{ $contacto->nombre }}</p>
+                                        <div class="d-flex align-items-center gap-3">
+                                            @if($contacto->foto)
+                                                <img src="{{ asset('img/'.$contacto->foto) }}"
+                                                     alt="{{ $contacto->nombre }}"
+                                                     class="contacto-foto">
+                                            @else
+                                                <div class="contacto-icono">
+                                                    <i class="bi bi-person-fill"></i>
+                                                </div>
+                                            @endif
 
-                                    @if($contacto->puesto)
-                                        <p class="mb-1">{{ $contacto->puesto }}</p>
-                                    @endif
+                                            <div>
+                                                <h5 class="fw-bold text-fca mb-1">{{ $contacto->nombre }}</h5>
 
-                                    @if($contacto->telefono)
-                                        <p class="mb-1">{{ $contacto->telefono }}</p>
-                                    @endif
+                                                @if($contacto->puesto)
+                                                    <p class="mb-1 text-muted">{{ $contacto->puesto }}</p>
+                                                @endif
 
-                                    @if($contacto->correo)
-                                        <p class="mb-0">
-                                            <a href="mailto:{{ $contacto->correo }}">{{ $contacto->correo }}</a>
-                                        </p>
-                                    @endif
+                                                @if($contacto->telefono)
+                                                    <p class="mb-1 small">
+                                                        <i class="bi bi-telephone-fill text-dorado"></i>
+                                                        {{ $contacto->telefono }}
+                                                    </p>
+                                                @endif
+
+                                                @if($contacto->correo)
+                                                    <p class="mb-0 small">
+                                                        <i class="bi bi-envelope-fill text-dorado"></i>
+                                                        <a href="mailto:{{ $contacto->correo }}" class="item-link">
+                                                            {{ $contacto->correo }}
+                                                        </a>
+                                                    </p>
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
-                    @endforeach
-                </div>
-            </div>
-        @endif
-    </section>
-@endforeach
+                    </div>
+                @endif
+
+            </section>
+        @endforeach
+
+    </div>
+</section>
 
 @endsection

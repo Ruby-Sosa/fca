@@ -878,3 +878,744 @@ section{
     }
 
 }
+
+.aspirantes-page{
+        background:#f4f7fb;
+        padding-top:40px;
+        padding-bottom:60px;
+    }
+
+    /* CONTENEDOR GENERAL MÁS ANCHO */
+    .aspirantes-page .container-lg{
+        max-width:1400px;
+    }
+
+    .text-fca{
+        color:#0b2c55;
+    }
+
+    .encabezado-texto{
+        max-width:850px;
+        margin:auto;
+    }
+
+    /* TARJETA DESTACADA */
+
+    .destacado-card{
+        max-width:1150px;
+        margin:0 auto;
+        background:white;
+        transition:0.3s ease;
+    }
+
+    .destacado-card:hover{
+        transform:translateY(-5px);
+        box-shadow:0 14px 30px rgba(0,0,0,0.15)!important;
+    }
+
+    .destacado-img{
+        width:100%;
+        height:480px;
+        object-fit:cover;
+        object-position:center;
+    }
+
+    .destacado-texto{
+        max-width:900px;
+        margin:auto;
+        line-height:1.9;
+        font-size:19px;
+    }
+
+    /* GRID MÁS ANCHO */
+
+    .row.g-4.justify-content-center{
+        max-width:1150px;
+        margin:auto;
+    }
+
+    /* TARJETAS */
+
+    .apartado-card,
+    .contacto-card{
+        transition:0.3s ease;
+        overflow:hidden;
+        background:white;
+        height:100%;
+        border-radius:24px;
+    }
+
+    .apartado-card:hover,
+    .contacto-card:hover{
+        transform:translateY(-5px);
+        box-shadow:0 14px 30px rgba(0,0,0,0.15)!important;
+    }
+
+    .apartado-img{
+        width:100%;
+        height:250px;
+        object-fit:cover;
+    }
+
+    .apartado-card .card-body{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        padding:32px;
+    }
+
+    /* BOTONES */
+
+    .btn-fca-yellow{
+        background-color:#d8a51d !important;
+        color:white !important;
+        border:none !important;
+        font-weight:600;
+        transition:0.3s ease;
+        display:inline-block;
+        padding:12px 28px;
+    }
+
+    .btn-fca-yellow:hover{
+        background-color:#b88a10 !important;
+        color:white !important;
+        transform:translateY(-2px);
+    }
+
+    /* CONTACTOS */
+
+    .contacto-card{
+        border-left:6px solid #d8a51d;
+        min-height:220px;
+    }
+
+    .contact-icon i{
+        font-size:42px;
+        color:#d8a51d;
+    }
+
+    .contacto-texto{
+        color:#5f6368;
+        line-height:1.8;
+        font-size:16px;
+    }
+    /* =========================
+   DOCENTES
+========================= */
+
+.docentes-page{
+    background:#f4f7fb;
+}
+
+.docentes-page .container-lg{
+    max-width:1200px;
+}
+
+.text-fca{
+    color:#0b2c55;
+}
+
+.text-dorado{
+    color:#d8a51d;
+}
+
+.encabezado-texto{
+    max-width:850px;
+    margin:auto;
+}
+
+.modulo-card,
+.info-card,
+.directorio-card,
+.contacto-docente-card{
+    background:white;
+}
+
+.modulo-img{
+    width:100%;
+    height:auto;
+    max-height:520px;
+    object-fit:contain;
+    object-position:center;
+    background:#fff;
+    padding:10px;
+    border-radius:20px 20px 0 0;
+}
+
+.modulo-texto{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.info-card,
+.directorio-card,
+.contacto-docente-card,
+.modulo-card{
+    transition:0.3s ease;
+}
+
+.info-card:hover,
+.directorio-card:hover,
+.contacto-docente-card:hover,
+.modulo-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 30px rgba(0,0,0,0.13)!important;
+}
+
+.item-card{
+    background:#f8fafc;
+    border-left:5px solid #d8a51d;
+}
+
+.item-link{
+    color:#0b2c55;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.item-link:hover{
+    color:#d8a51d;
+    text-decoration:underline;
+}
+
+.enlaces-box{
+    background:#0b2c55;
+    color:white;
+}
+
+.btn-fca-yellow{
+    background:#d8a51d !important;
+    color:white !important;
+    border:none !important;
+    font-weight:600;
+}
+
+.btn-fca-yellow:hover{
+    background:#b88a10 !important;
+    color:white !important;
+}
+
+.directorio-card table thead th{
+    background:#0b2c55;
+    color:white;
+}
+
+.contacto-docente-card{
+    border-left:6px solid #d8a51d;
+}
+
+.contacto-foto{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.contacto-icono{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:#0b2c55;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+}
+
+/* =========================
+   PÁGINA FCA GENERAL
+========================= */
+
+.pagina-fca{
+    background:#f4f7fb;
+}
+
+.pagina-fca .container-lg{
+    max-width:1200px;
+}
+
+.text-fca,
+.titulo-fca{
+    color:#0b2c55;
+}
+
+.titulo-linea{
+    width:90px;
+    height:5px;
+    background:#d8a51d;
+    border-radius:20px;
+    margin-top:14px;
+}
+
+.hero-fca{
+    max-width:980px;
+    margin:0 auto;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 14px 32px rgba(0,0,0,.13);
+    background:white;
+}
+
+.hero-fca img{
+    width:100%;
+    max-height:480px;
+    object-fit:contain;
+    display:block;
+    background:white;
+}
+
+.contenido-wrapper{
+    max-width:980px;
+    margin:0 auto;
+}
+
+.contenido-card,
+.info-card-fca,
+.contacto-fca-card{
+    background:white;
+    transition:.3s ease;
+}
+
+.contenido-card:hover,
+.info-card-fca:hover,
+.contacto-fca-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 30px rgba(0,0,0,.13)!important;
+}
+
+.descripcion-fca,
+.texto-contenido,
+.info-card-fca p{
+    color:#4b5563;
+    line-height:1.8;
+    font-size:16px;
+}
+
+.icono-fca,
+.icono-contacto{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#0b2c55;
+    color:#d8a51d;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+}
+
+.icono-contacto{
+    margin:0 auto;
+}
+
+.info-card-fca{
+    border-left:6px solid #d8a51d !important;
+}
+
+.contacto-fca-card{
+    border-top:6px solid #d8a51d;
+}
+
+.correo-fca{
+    color:#0b2c55;
+    font-weight:700;
+    text-decoration:none;
+}
+
+.correo-fca:hover{
+    color:#d8a51d;
+    text-decoration:underline;
+}
+/* =========================
+   EGRESADOS
+========================= */
+
+.egresados-page{
+    background:#f4f7fb;
+}
+
+.egresados-page .container-lg{
+    max-width:1200px;
+}
+
+.modulo-card,
+.info-card,
+.curso-card,
+.contacto-egresado-card{
+    background:white;
+    transition:.3s ease;
+}
+
+.modulo-card:hover,
+.info-card:hover,
+.curso-card:hover,
+.contacto-egresado-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 30px rgba(0,0,0,.13)!important;
+}
+
+.modulo-img{
+    width:100%;
+    height:auto;
+    max-height:520px;
+    object-fit:contain;
+    object-position:center;
+    background:#fff;
+    padding:10px;
+}
+
+.modulo-texto{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.item-card{
+    background:#f8fafc;
+    border-left:5px solid #d8a51d;
+}
+
+.curso-img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.enlaces-box{
+    background:#0b2c55;
+    color:white;
+}
+
+.contacto-egresado-card{
+    border-left:6px solid #d8a51d;
+}
+
+.contacto-foto{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.contacto-icono{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:#0b2c55;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+}
+/* =========================
+   ESTUDIANTES
+========================= */
+
+.estudiantes-page{
+    background:#f4f7fb;
+}
+
+.estudiantes-page .container-lg{
+    max-width:1200px;
+}
+
+.modulo-card,
+.info-card,
+.contacto-estudiante-card{
+    background:white;
+    transition:.3s ease;
+}
+
+.modulo-card:hover,
+.info-card:hover,
+.contacto-estudiante-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 30px rgba(0,0,0,.13)!important;
+}
+
+.modulo-img{
+    width:100%;
+    height:auto;
+    max-height:520px;
+    object-fit:contain;
+    object-position:center;
+    background:#fff;
+    padding:10px;
+}
+
+.modulo-texto{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.item-card{
+    background:#f8fafc;
+    border-left:5px solid #d8a51d;
+}
+
+.item-link{
+    color:#0b2c55;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.item-link:hover{
+    color:#d8a51d;
+    text-decoration:underline;
+}
+
+.enlaces-box{
+    background:#0b2c55;
+    color:white;
+}
+
+.btn-fca-yellow{
+    background:#d8a51d !important;
+    color:white !important;
+    border:none !important;
+    font-weight:600;
+}
+
+.btn-fca-yellow:hover{
+    background:#b88a10 !important;
+    color:white !important;
+}
+
+.contacto-estudiante-card{
+    border-left:6px solid #d8a51d;
+}
+
+.contacto-foto{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.contacto-icono{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:#0b2c55;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+}
+
+.text-fca{
+    color:#0b2c55;
+}
+
+.text-dorado{
+    color:#d8a51d;
+}
+
+.encabezado-texto{
+    max-width:850px;
+    margin:auto;
+}
+/* =========================
+   COORDINACIONES
+========================= */
+
+.coordinaciones-page{
+    background:#f4f7fb;
+    padding-top:40px;
+    padding-bottom:70px;
+}
+
+/* CONTENEDOR MÁS GRANDE */
+.coordinaciones-page .container-lg{
+    max-width:1450px;
+}
+
+/* TARJETA PRINCIPAL */
+.coordinaciones-page .modulo-card{
+    max-width:1200px;
+    margin:0 auto 60px auto;
+    background:white;
+    border-radius:28px;
+    overflow:hidden;
+    transition:.35s ease;
+}
+
+.coordinaciones-page .modulo-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(0,0,0,.14)!important;
+}
+
+.coordinaciones-page .modulo-img{
+    width:100%;
+    height:auto;
+    max-height:520px;
+    object-fit:contain;
+    object-position:center;
+    display:block;
+    background:#ffffff;
+    padding:12px;
+}
+
+/* CONTENIDO */
+.coordinaciones-page .card-body{
+    padding:45px 55px;
+}
+
+/* TITULO */
+.coordinaciones-page .card-body h2{
+    font-size:2rem;
+    font-weight:700;
+    color:#0b2c55;
+    margin-bottom:20px;
+}
+
+/* DESCRIPCION */
+.coordinaciones-page .modulo-texto{
+    font-size:18px;
+    line-height:1.9;
+    color:#5f6368;
+}
+
+/* SUBAPARTADOS */
+.coordinaciones-page .subapartado-card{
+    background:#f8fafc;
+    border-left:6px solid #d8a51d;
+    border-radius:18px;
+    padding:28px;
+    margin-bottom:22px;
+    transition:.3s ease;
+}
+
+.coordinaciones-page .subapartado-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 24px rgba(0,0,0,.08);
+}
+
+/* ITEMS */
+.coordinaciones-page .item-card{
+    background:white;
+    border-left:5px solid #d8a51d;
+    padding:18px;
+    border-radius:14px;
+}
+
+/* CAJA ENLACES */
+.coordinaciones-page .enlaces-box{
+    max-width:950px;
+    margin:35px auto;
+    background:#0b2c55;
+    border-radius:24px;
+    padding:35px;
+}
+
+/* BOTONES */
+.coordinaciones-page .btn-fca-yellow{
+    background:#d8a51d !important;
+    color:white !important;
+    border:none !important;
+    padding:12px 28px;
+    border-radius:40px;
+    font-weight:600;
+    transition:.3s ease;
+}
+
+.coordinaciones-page .btn-fca-yellow:hover{
+    background:#b88910 !important;
+    transform:translateY(-2px);
+}
+
+/* CONTACTOS */
+.coordinaciones-page .contacto-card{
+    width:100%;
+    max-width:100%;
+    margin:0 auto;
+    background:white;
+    border-left:6px solid #d8a51d;
+    border-radius:22px;
+    padding:28px 40px;
+    transition:.3s ease;
+}
+.coordinaciones-page .row.justify-content-center.g-4{
+    max-width:100%;
+}
+
+.coordinaciones-page .contacto-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 30px rgba(0,0,0,.12);
+}
+
+/* FOTO CONTACTO */
+.coordinaciones-page .contacto-card .d-flex{
+    justify-content:flex-start;
+}
+
+.coordinaciones-page .contacto-foto{
+    width:95px;
+    height:95px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid #f4f7fb;
+    flex-shrink:0;
+}
+
+/* ICONO */
+.coordinaciones-page .contacto-icon{
+    width:95px;
+    height:95px;
+    border-radius:50%;
+    background:#0b2c55;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:36px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+
+    .coordinaciones-page .modulo-img{
+        height:280px;
+    }
+
+    .coordinaciones-page .card-body{
+        padding:28px;
+    }
+
+    .coordinaciones-page .card-body h2{
+        font-size:1.5rem;
+    }
+
+    .coordinaciones-page .modulo-texto{
+        font-size:16px;
+    }
+}
+.aviso-coordinacion{
+    transition:.3s ease;
+    overflow:hidden;
+}
+
+.aviso-coordinacion:hover{
+    transform:translateY(-5px);
+    box-shadow:0 14px 30px rgba(0,0,0,.13)!important;
+}
+
+.aviso-img{
+    height:190px;
+    object-fit:cover;
+}
+
+.btn-fca-yellow{
+    background:#d8a51d !important;
+    color:white !important;
+    border:none !important;
+    font-weight:600;
+}
