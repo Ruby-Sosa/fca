@@ -1619,3 +1619,56 @@ section{
     border:none !important;
     font-weight:600;
 }
+
+/* ===== FIX NAVBAR MOBILE ===== */
+@media (max-width: 991px){
+
+    .main-nav{
+        width:100% !important;
+        margin:0 !important;
+    }
+
+    .site-header .container-fluid{
+        padding-left:12px !important;
+        padding-right:12px !important;
+    }
+
+    .navbar{
+        width:100%;
+    }
+
+    .navbar-toggler{
+    margin-left:auto !important;
+    margin-right:0 !important;
+    position:relative;
+    z-index:99999;
+    }
+
+    .navbar-collapse{
+        width:100%;
+        margin-top:10px !important;
+    }
+
+    .main-nav-scroll{
+        justify-content:flex-start !important;
+    }
+
+}
+@media (max-width: 991px){
+
+    .site-header .container-fluid,
+    .main-nav .container-fluid{
+        padding-left:0 !important;
+        padding-right:0 !important;
+        margin-left:0 !important;
+        margin-right:0 !important;
+    }
+
+    .main-nav{
+        width:100% !important;
+        margin:0 !important;
+        border-radius:0 !important;
+    }
+
+}
+
